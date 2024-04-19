@@ -71,6 +71,55 @@ public class UnitTest1
             bill_splitter splitter = new bill_splitter();
             Assert.AreEqual(mealCosts, tipPercentage);
         }
+        
+       [TestMethod]
+        public void CalculateTipPerPerson_ValidInputs_ReturnsCorrectTipAmount()
+        {
+            // Arrange
+            decimal price = 100.00m;
+            int numberOfPatrons = 5;
+            float tipPercentage = 15.0f;
+            decimal expectedTipPerPerson = 3.00m;
+
+            // Act
+            bill_splitter splitter = new bill_splitter();
+            decimal actualTipPerPerson = splitter.CalculateTipPerPerson(price, numberOfPatrons, tipPercentage);
+
+            // Assert
+            Assert.AreEqual(expectedTipPerPerson, actualTipPerPerson);
+        }
+
+        [TestMethod]
+        public void CalculateTipPerPerson_ZeroPrice_ReturnsZero()
+        {
+            // Arrange
+            decimal price = 0m;
+            int numberOfPatrons = 5;
+            float tipPercentage = 15.0f;
+
+            // Act
+            bill_splitter splitter = new bill_splitter();
+            decimal actualTipPerPerson = splitter.CalculateTipPerPerson(price, numberOfPatrons, tipPercentage);
+
+            // Assert
+            Assert.AreEqual(0m, actualTipPerPerson);
+        }
+
+        [TestMethod]
+        public void CalculateTipPerPerson_NegativeNumberOfPatrons_ReturnsZero()
+        {
+            // Arrange
+            decimal price = 100.00m;
+            int numberOfPatrons = -5;
+            float tipPercentage = 15.0f;
+
+            // Act
+            bill_splitter splitter = new bill_splitter();
+            decimal actualTipPerPerson = splitter.CalculateTipPerPerson(price, numberOfPatrons, tipPercentage);
+
+            // Assert
+            Assert.AreEqual(0m, actualTipPerPerson);
+        }
     }
 
         
