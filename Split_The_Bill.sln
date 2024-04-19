@@ -5,7 +5,7 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "split_bill", "split_bill\split_bill.csproj", "{9FF9A063-5858-4D07-B2F3-F27E845D1B00}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "split_the_bill_test", "split_the_bill_test\split_the_bill_test.csproj", "{72EBB786-8E45-4501-A7D6-61D878B05E82}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Split_Test", "Split_Test\Split_Test.csproj", "{0E185CB4-461E-4447-A29D-EE3FAEA7A07B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,5 +24,9 @@ Global
 		{72EBB786-8E45-4501-A7D6-61D878B05E82}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{72EBB786-8E45-4501-A7D6-61D878B05E82}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{72EBB786-8E45-4501-A7D6-61D878B05E82}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E185CB4-461E-4447-A29D-EE3FAEA7A07B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E185CB4-461E-4447-A29D-EE3FAEA7A07B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E185CB4-461E-4447-A29D-EE3FAEA7A07B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E185CB4-461E-4447-A29D-EE3FAEA7A07B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

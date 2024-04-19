@@ -5,11 +5,12 @@ namespace split_bill;
 public class bill_splitter
 
 {
+    // this is the firts method
     public decimal Amountsplited(decimal totalAmount, int numberOfPeople)
     {
         if (numberOfPeople <= 0)
         {
-            throw new ArgumentException("Number of people must be greater than zero.", nameof(numberOfPeople));
+            throw new ArgumentException("Number of person is greater than zero.", nameof(numberOfPeople));
         }
 
         if (totalAmount < 0)
@@ -17,10 +18,12 @@ public class bill_splitter
             throw new ArgumentException("Total amount must be non-negative.", nameof(totalAmount));
         }
 
-        // Calculate the split amount by rounding up to ensure fairness
+        // Calculate the split aamount
         decimal splitAmount = Math.Ceiling(totalAmount / numberOfPeople * 100) / 100;
         return splitAmount;
     }
+    
+    // this is the second method
     public Dictionary<string, decimal> CalculateTip(Dictionary<string, decimal> mealCosts, float tipPercentage)
     {
         if (mealCosts == null || mealCosts.Count == 0)
@@ -53,41 +56,24 @@ public class bill_splitter
 
         return tipAmounts;
     }
-    public static void Main(string[] args)
+
+    // this is the third method
+    public decimal CalculateTipPerPerson(decimal price, int numberOfPatrons, float tipPercentage)
     {
-        // Example usage
-        TipCalculator calculator = new TipCalculator();
-        Dictionary<string, decimal> mealCosts = new Dictionary<string, decimal>
+        // Check if inputs are valid
+        if (price <= 0 || numberOfPatrons <= 0 || tipPercentage < 0 || tipPercentage > 100)
         {
-            {"Jay", 25.00m},
-            {"abc", 30.00m},
-            {"xyz", 20.00m}
-        };
-        float tipPercentage = 15.0f;
-
-        Dictionary<string, decimal> tipAmounts = calculator.CalculateTip(mealCosts, tipPercentage);
-
-        // Print the result
-        Console.WriteLine("Tip distribution:");
-        foreach (var kvp in tipAmounts)
-        {
-            Console.WriteLine($"{kvp.Key}: {kvp.Value:C}");
+            return 0; // Or any default value indicating an error
         }
 
-    }
-
-    private class TipCalculator
-    {
-        public TipCalculator()
-        {
-        }
-
-        internal Dictionary<string, decimal> CalculateTip(Dictionary<string, decimal> mealCosts, float tipPercentage)
-        {
-            throw new NotImplementedException();
-        }
+        // Calculate tip per person
+        return price * (decimal)(tipPercentage / 100) / numberOfPatrons;
     }
 }
+
+
+    
+
 
 
 
