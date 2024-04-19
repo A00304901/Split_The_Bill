@@ -16,25 +16,37 @@ public class UnitTest1
             Assert.AreEqual(expectedSplit, actualSplit);
     }
     [TestMethod]
-    public void Amountsplited_ZeroAmount_ThrowsArgumentException()
-    {
-        
-        decimal totalAmount = 0m;
-        int numberOfPeople = 5;
-        bill_splitter splitter = new bill_splitter();
-        Assert.AreEqual(totalAmount, numberOfPeople);
-    }
+        public void Amountsplited_ZeroAmount_ThrowsArgumentException()
+        {
+            
+            decimal totalAmount = 0m;
+            int numberOfPeople = 9;
+            bill_splitter splitter = new bill_splitter();
+            Assert.AreEqual(totalAmount, numberOfPeople);
+        }
     [TestMethod]
     public void Amountsplited_NegativeTotalAmount_ThrowsArgumentException()
     {
         // Arrange
-        decimal totalAmount = -100.00m;
-        int numberOfPeople = 5;
+        decimal totalAmount = -45.00m;
+        int numberOfPeople = 9;
 
         // Act & Assert
         bill_splitter splitter = new bill_splitter();
         Assert.AreEqual(totalAmount, numberOfPeople);
     }
+    [TestMethod]
+        public void Amountsplited_NegativeTotalAmount_ThrowsArgumentExceptionlast()
+        {
+        
+            decimal totalAmount = -100.00m;
+            int numberOfPeople = 5;
+            bill_splitter splitter = new bill_splitter();
+            Assert.AreEqual(totalAmount, numberOfPeople);
+        }
+
+        
+
 
 }
 }
